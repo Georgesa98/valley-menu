@@ -6,7 +6,8 @@ import {
   TabTriggerSlotProps,
   TabListProps,
 } from 'expo-router/ui';
-import { Pressable, useColorScheme, View, StyleSheet } from 'react-native';
+import { Pressable, View, StyleSheet } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import { ThemedText } from './themed-text';
 import { ThemedView } from './themed-view';
@@ -20,10 +21,10 @@ export default function AppTabs() {
       <TabList asChild>
         <CustomTabList>
           <TabTrigger name="menu" href="/" asChild>
-            <TabButton>القائمة</TabButton>
+            <TabButton tabName="menu" label="القائمة" />
           </TabTrigger>
           <TabTrigger name="admin" href="/admin" asChild>
-            <TabButton>لوحة التحكم</TabButton>
+            <TabButton tabName="admin" label="لوحة التحكم" />
           </TabTrigger>
         </CustomTabList>
       </TabList>
@@ -31,19 +32,33 @@ export default function AppTabs() {
   );
 }
 
-export function TabButton({ children, isFocused, ...props }: TabTriggerSlotProps) {
-  const scheme = useColorScheme();
-  const colors = Colors[scheme === 'unspecified' ? 'light' : scheme];
+const iconMap: Record<string, React.ComponentProps<typeof MaterialIcons>['name']> = {
+  menu: 'menu-book',
+  admin: 'settings',
+};
+
+type TabButtonProps = TabTriggerSlotProps & {
+  tabName: string;
+  label: string;
+};
+
+export function TabButton({ isFocused, tabName, label, ...props }: TabButtonProps) {
+  const colors = Colors.light;
 
   return (
     <Pressable {...props} style={({ pressed }) => pressed && styles.pressed}>
       <ThemedView
         type={isFocused ? 'backgroundSelected' : undefined}
         style={styles.tabButtonView}>
+        <MaterialIcons
+          name={iconMap[tabName] ?? 'help-outline'}
+          size={20}
+          color={isFocused ? colors.accent : colors.textSecondary}
+        />
         <ThemedText
           type="smallBold"
-          themeColor={isFocused ? 'text' : 'textSecondary'}>
-          {children}
+          themeColor={isFocused ? 'accent' : 'textSecondary'}>
+          {label}
         </ThemedText>
       </ThemedView>
     </Pressable>

@@ -17,8 +17,8 @@ export default function MenuItemCard({ item, showFinancialPrice }: Props) {
       <Text style={[styles.nameAr, { color: theme.text }]} numberOfLines={1}>
         {item.name}
       </Text>
-      <Text style={[styles.price, { color: theme.text }]}>
-        {price} ل.س
+      <Text style={[styles.price, { color: theme.accent }]}>
+        {price.toLocaleString()}
       </Text>
       <Text style={[styles.nameEn, { color: theme.textSecondary }]} numberOfLines={1}>
         {item.nameEn || item.name}

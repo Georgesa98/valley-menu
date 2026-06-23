@@ -4,8 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '@/hooks/use-theme';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import type { Category, MenuItem } from '@/lib/types';
-import { loadData } from '@/lib/storage';
-import { getSettings } from '@/lib/settings';
+import { getCategories, getMenuItems, getShowFinancialPrice, ensureDefaults } from '@/lib/db/client';
 import CategoryPills from '@/components/menu/category-pills';
 import CategorySection from '@/components/menu/category-section';
 
@@ -19,7 +18,6 @@ export default function MenuScreen() {
   const [showFinancial, setShowFinancial] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const sectionYRef = useRef<Record<string, number>>({});
   const loaded = useRef(false);
 
   useEffect(() => {
@@ -27,13 +25,10 @@ export default function MenuScreen() {
     loaded.current = true;
 
     (async () => {
-      const cats = await loadData<Category[]>('menu_categories') ?? [];
-      const allItems = await loadData<MenuItem[]>('menu_items') ?? [];
-      setCategories(cats);
-      setItems(allItems);
-
-      const settings = await getSettings();
-      setShowFinancial(settings.showFinancialPrice);
+      await ensureDefaults();
+      setCategories(getCategories());
+      setItems(getMenuItems());
+      setShowFinancial(getShowFinancialPrice());
     })();
   }, []);
 
@@ -67,6 +62,11 @@ export default function MenuScreen() {
             paddingBottom: BottomTabInset + Spacing.four,
           }}
         >
+          <View style={[styles.logoPlaceholder, { borderColor: theme.textSecondary }]}>
+            <Text style={[styles.logoText, { color: theme.textSecondary }]}>
+              شعار المطعم
+            </Text>
+          </View>
           <CategoryPills
             categories={categories}
             selectedId={selectedCategory}
@@ -92,6 +92,20 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  logoPlaceholder: {
+    height: 120,
+    marginHorizontal: Spacing.four,
+    marginBottom: Spacing.three,
+    borderWidth: 2,
+    borderStyle: 'dashed',
+    borderRadius: Spacing.five,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logoText: {
+    fontSize: 14,
+    fontFamily: 'Cairo_600SemiBold',
   },
   emptyState: {
     flex: 1,

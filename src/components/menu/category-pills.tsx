@@ -25,7 +25,7 @@ export default function CategoryPills({ categories, selectedId, onSelect }: Prop
         onPress={() => onSelect(null)}
         style={[
           styles.pill,
-          { backgroundColor: selectedId === null ? theme.text : theme.backgroundElement },
+          { backgroundColor: selectedId === null ? theme.accent : theme.backgroundElement },
         ]}
       >
         <Text
@@ -43,7 +43,7 @@ export default function CategoryPills({ categories, selectedId, onSelect }: Prop
           onPress={() => onSelect(cat.id)}
           style={[
             styles.pill,
-            { backgroundColor: selectedId === cat.id ? theme.text : theme.backgroundElement },
+            { backgroundColor: selectedId === cat.id ? theme.accent : theme.backgroundElement },
           ]}
         >
           <Text
