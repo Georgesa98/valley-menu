@@ -14,6 +14,7 @@ type Props = {
 export default function ItemForm({ visible, initial, onSave, onCancel }: Props) {
   const theme = useTheme();
   const [name, setName] = useState('');
+  const [nameEn, setNameEn] = useState('');
   const [description, setDescription] = useState('');
   const [consumerPrice, setConsumerPrice] = useState('');
   const [financialPrice, setFinancialPrice] = useState('');
@@ -22,6 +23,7 @@ export default function ItemForm({ visible, initial, onSave, onCancel }: Props) 
   useEffect(() => {
     if (visible) {
       setName(initial?.name ?? '');
+      setNameEn(initial?.nameEn ?? '');
       setDescription(initial?.description ?? '');
       setConsumerPrice(initial?.consumerPrice?.toString() ?? '');
       setFinancialPrice(initial?.financialPrice?.toString() ?? '');
@@ -35,6 +37,7 @@ export default function ItemForm({ visible, initial, onSave, onCancel }: Props) 
     if (!name.trim() || isNaN(cPrice) || isNaN(fPrice)) return;
     onSave({
       name: name.trim(),
+      nameEn: nameEn.trim(),
       description: description.trim(),
       consumerPrice: cPrice,
       financialPrice: fPrice,
@@ -54,11 +57,19 @@ export default function ItemForm({ visible, initial, onSave, onCancel }: Props) 
 
           <TextInput
             style={[styles.input, { backgroundColor: theme.backgroundElement, color: theme.text }]}
-            placeholder="الاسم"
+            placeholder="الاسم (عربي)"
             placeholderTextColor={theme.textSecondary}
             value={name}
             onChangeText={setName}
             autoFocus
+          />
+
+          <TextInput
+            style={[styles.input, { backgroundColor: theme.backgroundElement, color: theme.text }]}
+            placeholder="Name (English)"
+            placeholderTextColor={theme.textSecondary}
+            value={nameEn}
+            onChangeText={setNameEn}
           />
 
           <TextInput

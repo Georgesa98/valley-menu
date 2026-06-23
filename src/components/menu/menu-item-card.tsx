@@ -13,40 +13,47 @@ export default function MenuItemCard({ item, showFinancialPrice }: Props) {
   const price = showFinancialPrice ? item.financialPrice : item.consumerPrice;
 
   return (
-    <View style={[styles.card, { backgroundColor: theme.backgroundElement }]}>
-      <Text style={[styles.name, { color: theme.text }]}>{item.name}</Text>
-      {item.description ? (
-        <Text style={[styles.desc, { color: theme.textSecondary }]} numberOfLines={2}>
-          {item.description}
-        </Text>
-      ) : null}
+    <View style={styles.row}>
+      <Text style={[styles.nameAr, { color: theme.text }]} numberOfLines={1}>
+        {item.name}
+      </Text>
       <Text style={[styles.price, { color: theme.text }]}>
-        {price} ₪
+        {price} ل.س
+      </Text>
+      <Text style={[styles.nameEn, { color: theme.textSecondary }]} numberOfLines={1}>
+        {item.nameEn || item.name}
       </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    borderRadius: Spacing.three,
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.two + Spacing.one,
-    minHeight: 56,
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: Spacing.two + Spacing.half,
+    paddingHorizontal: Spacing.four,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: 'rgba(128,128,128,0.2)',
+    minHeight: 48,
   },
-  name: {
-    fontSize: 18,
+  nameAr: {
+    flex: 1,
+    fontSize: 17,
     fontFamily: 'Cairo_700Bold',
-  },
-  desc: {
-    fontSize: 13,
-    fontFamily: 'Cairo_400Regular',
-    marginTop: Spacing.half,
-    lineHeight: 18,
+    textAlign: 'right',
   },
   price: {
-    fontSize: 20,
+    fontSize: 16,
     fontFamily: 'Cairo_700Bold',
-    marginTop: Spacing.two,
+    textAlign: 'center',
+    marginHorizontal: Spacing.two,
+    minWidth: 80,
+  },
+  nameEn: {
+    flex: 1,
+    fontSize: 14,
+    fontFamily: 'Cairo_400Regular',
+    textAlign: 'left',
   },
 });

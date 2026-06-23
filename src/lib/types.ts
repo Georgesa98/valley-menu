@@ -8,6 +8,7 @@ export interface MenuItem {
   id: string
   categoryId: string
   name: string
+  nameEn: string
   description: string
   consumerPrice: number
   financialPrice: number

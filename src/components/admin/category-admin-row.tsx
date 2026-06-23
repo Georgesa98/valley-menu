@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from '@/hooks/use-theme';
 import { Spacing } from '@/constants/theme';
 import type { Category, MenuItem } from '@/lib/types';
@@ -46,10 +47,10 @@ export default function CategoryAdminRow({
         <Text style={[styles.name, { color: theme.text }]}>{category.name}</Text>
         <View style={styles.headerActions}>
           <Pressable onPress={onEditCategory} style={styles.iconBtn}>
-            <Text style={styles.icon}>✏️</Text>
+            <MaterialIcons name="edit" size={18} color={theme.textSecondary} />
           </Pressable>
           <Pressable onPress={handleDeleteCategory} style={styles.iconBtn}>
-            <Text style={styles.icon}>🗑️</Text>
+            <MaterialIcons name="delete-outline" size={18} color={theme.textSecondary} />
           </Pressable>
           <Text style={[styles.chevron, { color: theme.textSecondary }]}>
             {expanded ? '▲' : '▼'}
@@ -64,9 +65,12 @@ export default function CategoryAdminRow({
             .map((item) => (
               <View key={item.id} style={[styles.itemRow, { borderColor: theme.background }]}>
                 <View style={styles.itemInfo}>
-                  <Text style={[styles.itemName, { color: theme.text }]}>{item.name}</Text>
+                  <Text style={[styles.itemName, { color: theme.text }]}>
+                    {item.name}
+                    {item.nameEn ? <Text style={[styles.itemNameEn, { color: theme.textSecondary }]}> — {item.nameEn}</Text> : null}
+                  </Text>
                   <Text style={[styles.itemPrices, { color: theme.textSecondary }]}>
-                    مستهلك: {item.consumerPrice} ₪ | مالية: {item.financialPrice} ₪
+                    مستهلك: {item.consumerPrice} ل.س | مالية: {item.financialPrice} ل.س
                     {!item.isAvailable ? ` (غير متاح)` : ''}
                   </Text>
                   {item.description ? (
@@ -77,10 +81,10 @@ export default function CategoryAdminRow({
                 </View>
                 <View style={styles.itemActions}>
                   <Pressable onPress={() => onEditItem(item)} style={styles.iconBtn}>
-                    <Text style={styles.smallIcon}>✏️</Text>
+                    <MaterialIcons name="edit" size={16} color={theme.textSecondary} />
                   </Pressable>
                   <Pressable onPress={() => handleDeleteItem(item)} style={styles.iconBtn}>
-                    <Text style={styles.smallIcon}>🗑️</Text>
+                    <MaterialIcons name="delete-outline" size={16} color={theme.textSecondary} />
                   </Pressable>
                 </View>
               </View>
@@ -115,13 +119,10 @@ const styles = StyleSheet.create({
   headerActions: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: Spacing.half,
+    gap: Spacing.one,
   },
   iconBtn: {
     padding: Spacing.half,
-  },
-  icon: {
-    fontSize: 16,
   },
   chevron: {
     fontSize: 12,
@@ -146,6 +147,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Cairo_600SemiBold',
   },
+  itemNameEn: {
+    fontSize: 13,
+    fontFamily: 'Cairo_400Regular',
+  },
   itemPrices: {
     fontSize: 12,
     fontFamily: 'Cairo_400Regular',
@@ -159,9 +164,6 @@ const styles = StyleSheet.create({
   itemActions: {
     flexDirection: 'row',
     gap: Spacing.one,
-  },
-  smallIcon: {
-    fontSize: 14,
   },
   addItemBtn: {
     borderWidth: 1,
