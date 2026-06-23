@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@expo-google-fonts/cairo':
+        specifier: ^0.4.2
+        version: 0.4.2
       '@expo/ui':
         specifier: ~56.0.18
         version: 56.0.18(@babel/core@7.29.7)(@types/react@19.2.17)(expo@56.0.12)(react-dom@19.2.3(react@19.2.3))(react-native-reanimated@4.3.1(react-native-worklets@0.8.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3))(react-native-worklets@0.8.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3)
@@ -26,6 +29,9 @@ importers:
       expo-constants:
         specifier: ~56.0.18
         version: 56.0.18(expo@56.0.12)(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))
+      expo-crypto:
+        specifier: ^56.0.4
+        version: 56.0.4(expo@56.0.12)
       expo-device:
         specifier: ~56.0.4
         version: 56.0.4(expo@56.0.12)
@@ -487,6 +493,9 @@ packages:
   '@egjs/hammerjs@2.0.17':
     resolution: {integrity: sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==}
     engines: {node: '>=0.8.0'}
+
+  '@expo-google-fonts/cairo@0.4.2':
+    resolution: {integrity: sha512-iWXHgE4MH6BfFqs8IxhbjNphAboUsb8NSEVIf1kWVGkiwCkAXDHxotgASabuPhhM1SQQXrgOPdmjT9VyeakM3Q==}
 
   '@expo-google-fonts/material-symbols@0.4.38':
     resolution: {integrity: sha512-IJkBtN1o8u9BW5fvSii1MyHPQ7Q0HxbWcVBvOrOzgMLpVtZw7R2w94wBTVR7kZwv3w1JNTESMmLA5Sqn1+Z36A==}
@@ -1510,6 +1519,11 @@ packages:
     peerDependencies:
       expo: '*'
       react-native: '*'
+
+  expo-crypto@56.0.4:
+    resolution: {integrity: sha512-fRNEhoXRXgAWBpe3/hq5X+KXTit3OZqdiAGts1YvNEUHQb+H5591mpPac0Yw+sZg9pXcrjRnzo5AxvZaENpc7g==}
+    peerDependencies:
+      expo: '*'
 
   expo-device@56.0.4:
     resolution: {integrity: sha512-ucVcGPkvBrl2QHuy7XcYex2Y6BETvJ6TREutZrwLGUDnlvbpKS8KfQoNZOpvkyo5Nmm9RrasYQ0CrXmBHho2mg==}
@@ -3363,6 +3377,8 @@ snapshots:
     dependencies:
       '@types/hammerjs': 2.0.46
 
+  '@expo-google-fonts/cairo@0.4.2': {}
+
   '@expo-google-fonts/material-symbols@0.4.38': {}
 
   '@expo/cli@56.1.16(@expo/dom-webview@56.0.5)(@expo/metro-runtime@56.0.15)(expo-constants@56.0.18)(expo-font@56.0.7)(expo-router@56.2.11)(expo@56.0.12)(react-dom@19.2.3(react@19.2.3))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3)(typescript@6.0.3)':
@@ -4639,6 +4655,10 @@ snapshots:
       react-native: 0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3)
     transitivePeerDependencies:
       - supports-color
+
+  expo-crypto@56.0.4(expo@56.0.12):
+    dependencies:
+      expo: 56.0.12(@babel/core@7.29.7)(@expo/dom-webview@56.0.5)(@expo/metro-runtime@56.0.15)(expo-router@56.2.11)(react-dom@19.2.3(react@19.2.3))(react-native-web@0.21.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-native-worklets@0.8.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3))(react-native@0.85.3(@babel/core@7.29.7)(@react-native/metro-config@0.85.3(@babel/core@7.29.7))(@types/react@19.2.17)(react@19.2.3))(react@19.2.3)(typescript@6.0.3)
 
   expo-device@56.0.4(expo@56.0.12):
     dependencies:
