@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { Spacing } from '@/constants/theme';
@@ -12,7 +12,13 @@ type Props = {
 
 export default function CategoryForm({ visible, initialName, onSave, onCancel }: Props) {
   const theme = useTheme();
-  const [name, setName] = useState(initialName ?? '');
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    if (visible) {
+      setName(initialName ?? '');
+    }
+  }, [visible, initialName]);
 
   return (
     <Modal visible={visible} transparent animationType="fade">
