@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   Alert,
   Pressable,
@@ -9,12 +9,25 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { useFocusEffect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '@/hooks/use-theme';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import type { Category, MenuItem } from '@/lib/types';
-import { loadData as storageLoad, saveData, generateId } from '@/lib/storage';
-import { getSettings, saveSettings, setPassword } from '@/lib/settings';
+import {
+  getCategories,
+  getMenuItems,
+  getShowFinancialPrice,
+  setShowFinancialPrice,
+  addCategory,
+  updateCategory,
+  deleteCategory,
+  addMenuItem,
+  updateMenuItem,
+  deleteMenuItem,
+  generateId,
+  setAdminPassword,
+} from '@/lib/db/client';
 import AdminLogin from '@/components/admin/admin-login';
 import CategoryForm from '@/components/admin/category-form';
 import ItemForm from '@/components/admin/item-form';
@@ -39,98 +52,77 @@ export default function AdminScreen() {
   const [changePassVisible, setChangePassVisible] = useState(false);
   const [newPassword, setNewPassword] = useState('');
 
-  const loaded = useRef(false);
+  useFocusEffect(
+    useCallback(() => {
+      if (authenticated) {
+        setCategories(getCategories());
+        setItems(getMenuItems());
+        setShowFinancial(getShowFinancialPrice());
+      }
+    }, [authenticated]),
+  );
 
-  const loadMenuData = useCallback(async () => {
-    const cats = await storageLoad<Category[]>('menu_categories') ?? [];
-    const allItems = await storageLoad<MenuItem[]>('menu_items') ?? [];
-    setCategories(cats);
-    setItems(allItems);
-
-    const settings = await getSettings();
-    setShowFinancial(settings.showFinancialPrice);
+  const refreshState = useCallback(() => {
+    setCategories(getCategories());
+    setItems(getMenuItems());
+    setShowFinancial(getShowFinancialPrice());
   }, []);
-
-  useEffect(() => {
-    if (loaded.current) return;
-    loaded.current = true;
-    loadMenuData();
-  }, [loadMenuData]);
 
   const handleLogin = () => {
     setAuthenticated(true);
   };
 
-  const addCategory = async (name: string) => {
-    const newCat: Category = {
-      id: generateId(),
-      name,
-      order: categories.length + 1,
-    };
-    const updated = [...categories, newCat];
-    setCategories(updated);
-    await saveData('menu_categories', updated);
+  const handleAddCategory = (name: string) => {
+    addCategory(generateId(), name, categories.length + 1);
+    refreshState();
     setCatFormVisible(false);
   };
 
-  const editCategory = async (name: string) => {
+  const handleEditCategory = (name: string) => {
     if (!editingCategory) return;
-    const updated = categories.map((c) =>
-      c.id === editingCategory.id ? { ...c, name } : c,
-    );
-    setCategories(updated);
-    await saveData('menu_categories', updated);
+    updateCategory(editingCategory.id, name);
+    refreshState();
     setEditingCategory(null);
     setCatFormVisible(false);
   };
 
-  const deleteCategory = async (catId: string) => {
-    const updatedCats = categories.filter((c) => c.id !== catId);
-    const updatedItems = items.filter((i) => i.categoryId !== catId);
-    setCategories(updatedCats);
-    setItems(updatedItems);
-    await saveData('menu_categories', updatedCats);
-    await saveData('menu_items', updatedItems);
+  const handleDeleteCategory = (catId: string) => {
+    deleteCategory(catId);
+    refreshState();
   };
 
-  const addItem = async (data: Omit<MenuItem, 'id' | 'categoryId' | 'order'>) => {
+  const handleAddItem = (data: Omit<MenuItem, 'id' | 'categoryId' | 'order'>) => {
     const catId = itemCategoryId;
     if (!catId) return;
     const catItems = items.filter((i) => i.categoryId === catId);
-    const newItem: MenuItem = {
+    addMenuItem({
       ...data,
       id: generateId(),
       categoryId: catId,
       order: catItems.length + 1,
-    };
-    const updated = [...items, newItem];
-    setItems(updated);
-    await saveData('menu_items', updated);
+    });
+    refreshState();
     setItemFormVisible(false);
     setItemCategoryId(null);
   };
 
-  const editItem = async (data: Omit<MenuItem, 'id' | 'categoryId' | 'order'>) => {
+  const handleEditItem = (data: Omit<MenuItem, 'id' | 'categoryId' | 'order'>) => {
     if (!editingItem) return;
-    const updated = items.map((i) =>
-      i.id === editingItem.id ? { ...i, ...data } : i,
-    );
-    setItems(updated);
-    await saveData('menu_items', updated);
+    updateMenuItem(editingItem.id, data);
+    refreshState();
     setEditingItem(null);
     setItemFormVisible(false);
     setItemCategoryId(null);
   };
 
-  const deleteItem = async (item: MenuItem) => {
-    const updated = items.filter((i) => i.id !== item.id);
-    setItems(updated);
-    await saveData('menu_items', updated);
+  const handleDeleteItem = (item: MenuItem) => {
+    deleteMenuItem(item.id);
+    refreshState();
   };
 
-  const togglePriceSetting = async (value: boolean) => {
+  const togglePriceSetting = (value: boolean) => {
+    setShowFinancialPrice(value);
     setShowFinancial(value);
-    await saveSettings({ showFinancialPrice: value });
   };
 
   const handleChangePassword = async () => {
@@ -138,7 +130,7 @@ export default function AdminScreen() {
       Alert.alert('خطأ', 'كلمة المرور يجب أن تكون ٤ أحرف على الأقل');
       return;
     }
-    await setPassword(newPassword);
+    await setAdminPassword(newPassword);
     setNewPassword('');
     setChangePassVisible(false);
   };
@@ -227,13 +219,13 @@ export default function AdminScreen() {
               setEditingCategory(cat);
               setCatFormVisible(true);
             }}
-            onDeleteCategory={() => deleteCategory(cat.id)}
+            onDeleteCategory={() => handleDeleteCategory(cat.id)}
             onEditItem={(item) => {
               setEditingItem(item);
               setItemCategoryId(item.categoryId);
               setItemFormVisible(true);
             }}
-            onDeleteItem={deleteItem}
+            onDeleteItem={handleDeleteItem}
             onAddItem={() => {
               setEditingItem(null);
               setItemCategoryId(cat.id);
@@ -247,7 +239,7 @@ export default function AdminScreen() {
       <CategoryForm
         visible={catFormVisible}
         initialName={editingCategory?.name}
-        onSave={(name) => (editingCategory ? editCategory(name) : addCategory(name))}
+        onSave={(name) => (editingCategory ? handleEditCategory(name) : handleAddCategory(name))}
         onCancel={() => { setCatFormVisible(false); setEditingCategory(null); }}
       />
 
@@ -255,7 +247,7 @@ export default function AdminScreen() {
       <ItemForm
         visible={itemFormVisible}
         initial={editingItem ?? undefined}
-        onSave={(data) => (editingItem ? editItem(data) : addItem(data))}
+        onSave={(data) => (editingItem ? handleEditItem(data) : handleAddItem(data))}
         onCancel={() => {
           setItemFormVisible(false);
           setEditingItem(null);

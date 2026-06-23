@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { Spacing } from '@/constants/theme';
-import { verifyPassword, setPassword as setAdminPassword } from '@/lib/settings';
+import { verifyPassword, setAdminPassword } from '@/lib/db/client';
 
 type Props = {
   onLogin: () => void;

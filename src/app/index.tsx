@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useFocusEffect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '@/hooks/use-theme';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import type { Category, MenuItem } from '@/lib/types';
-import { getCategories, getMenuItems, getShowFinancialPrice, ensureDefaults } from '@/lib/db/client';
+import { getCategories, getMenuItems, getShowFinancialPrice } from '@/lib/db/client';
 import CategoryPills from '@/components/menu/category-pills';
 import CategorySection from '@/components/menu/category-section';
 
@@ -18,19 +19,13 @@ export default function MenuScreen() {
   const [showFinancial, setShowFinancial] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const loaded = useRef(false);
-
-  useEffect(() => {
-    if (loaded.current) return;
-    loaded.current = true;
-
-    (async () => {
-      await ensureDefaults();
+  useFocusEffect(
+    useCallback(() => {
       setCategories(getCategories());
       setItems(getMenuItems());
       setShowFinancial(getShowFinancialPrice());
-    })();
-  }, []);
+    }, []),
+  );
 
   const filteredItems = selectedCategory
     ? items.filter((i) => i.categoryId === selectedCategory && i.isAvailable)
@@ -68,7 +63,7 @@ export default function MenuScreen() {
             </Text>
           </View>
           <CategoryPills
-            categories={categories}
+            categories={visibleCategories}
             selectedId={selectedCategory}
             onSelect={handlePillSelect}
           />

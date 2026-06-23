@@ -1,21 +1,8 @@
-export interface Category {
-  id: string
-  name: string
-  order: number
-}
+import type { categories, menuItems } from './db/schema';
 
-export interface MenuItem {
-  id: string
-  categoryId: string
-  name: string
-  nameEn: string
-  description: string
-  consumerPrice: number
-  financialPrice: number
-  order: number
-  isAvailable: boolean
-}
+export type Category = typeof categories.$inferSelect;
+export type MenuItem = typeof menuItems.$inferSelect;
 
 export interface MenuSettings {
-  showFinancialPrice: boolean
+  showFinancialPrice: boolean;
 }
