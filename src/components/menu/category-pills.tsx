@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.four,
     gap: Spacing.two,
     paddingVertical: Spacing.three,
+    marginBottom: Spacing.one,
   },
   pill: {
     paddingHorizontal: Spacing.four,

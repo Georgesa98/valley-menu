@@ -1,9 +1,9 @@
 import { useCallback, useRef, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '@/hooks/use-theme';
-import { BottomTabInset, Spacing } from '@/constants/theme';
+import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 import type { Category, MenuItem } from '@/lib/types';
 import { getCategories, getMenuItems, getShowFinancialPrice } from '@/lib/db/client';
 import CategoryPills from '@/components/menu/category-pills';
@@ -57,24 +57,26 @@ export default function MenuScreen() {
             paddingBottom: BottomTabInset + Spacing.four,
           }}
         >
-          <View style={[styles.logoPlaceholder, { borderColor: theme.textSecondary }]}>
-            <Text style={[styles.logoText, { color: theme.textSecondary }]}>
-              شعار المطعم
-            </Text>
-          </View>
-          <CategoryPills
-            categories={visibleCategories}
-            selectedId={selectedCategory}
-            onSelect={handlePillSelect}
-          />
-          {visibleCategories.map((cat) => (
-            <CategorySection
-              key={cat.id}
-              category={cat}
-              items={filteredItems.filter((i) => i.categoryId === cat.id)}
-              showFinancialPrice={showFinancial}
+          <View style={styles.content}>
+            <Image
+              source={require('@/assets/images/rest_logo.png')}
+              style={styles.logo}
+              resizeMode="contain"
             />
-          ))}
+            <CategoryPills
+              categories={visibleCategories}
+              selectedId={selectedCategory}
+              onSelect={handlePillSelect}
+            />
+            {visibleCategories.map((cat) => (
+              <CategorySection
+                key={cat.id}
+                category={cat}
+                items={filteredItems.filter((i) => i.categoryId === cat.id)}
+                showFinancialPrice={showFinancial}
+              />
+            ))}
+          </View>
         </ScrollView>
       )}
     </View>
@@ -88,19 +90,16 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
   },
-  logoPlaceholder: {
-    height: 120,
-    marginHorizontal: Spacing.four,
-    marginBottom: Spacing.three,
-    borderWidth: 2,
-    borderStyle: 'dashed',
-    borderRadius: Spacing.five,
-    justifyContent: 'center',
-    alignItems: 'center',
+  content: {
+    width: '100%',
+    maxWidth: MaxContentWidth,
+    alignSelf: 'center',
   },
-  logoText: {
-    fontSize: 14,
-    fontFamily: 'Cairo_600SemiBold',
+  logo: {
+    width: '90%',
+    height: 200,
+    alignSelf: 'center',
+    marginBottom: Spacing.three,
   },
   emptyState: {
     flex: 1,

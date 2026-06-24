@@ -32,6 +32,7 @@ import AdminLogin from '@/components/admin/admin-login';
 import CategoryForm from '@/components/admin/category-form';
 import ItemForm from '@/components/admin/item-form';
 import CategoryAdminRow from '@/components/admin/category-admin-row';
+import ImportExportModal from '@/components/admin/import-export-modal';
 
 export default function AdminScreen() {
   const theme = useTheme();
@@ -51,6 +52,8 @@ export default function AdminScreen() {
 
   const [changePassVisible, setChangePassVisible] = useState(false);
   const [newPassword, setNewPassword] = useState('');
+
+  const [importExportVisible, setImportExportVisible] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -192,6 +195,14 @@ export default function AdminScreen() {
           </View>
         )}
 
+        {/* Import / Export */}
+        <Pressable
+          onPress={() => setImportExportVisible(true)}
+          style={[styles.addCatBtn, { backgroundColor: theme.backgroundElement }]}
+        >
+          <Text style={[styles.addCatText, { color: theme.text }]}>📦 استيراد / تصدير</Text>
+        </Pressable>
+
         {/* Add Category */}
         <Pressable
           onPress={() => { setEditingCategory(null); setCatFormVisible(true); }}
@@ -253,6 +264,13 @@ export default function AdminScreen() {
           setEditingItem(null);
           setItemCategoryId(null);
         }}
+      />
+
+      {/* Import / Export Modal */}
+      <ImportExportModal
+        visible={importExportVisible}
+        onClose={() => setImportExportVisible(false)}
+        onImportComplete={refreshState}
       />
     </View>
   );
