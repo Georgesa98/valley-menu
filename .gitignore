@@ -9,6 +9,11 @@ dist/
 web-build/
 expo-env.d.ts
 
+# EAS local build artifacts
+build-*.apk
+build-*.aab
+build-*.tar.gz
+
 # Native
 .kotlin/
 *.orig.*
