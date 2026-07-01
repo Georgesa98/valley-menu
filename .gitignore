@@ -14,6 +14,11 @@ build-*.apk
 build-*.aab
 build-*.tar.gz
 
+# Diagnostic output (created by expo-doctor / pnpm install sessions)
+doctor-output.txt
+install-output.txt
+app-log.txt
+
 # Native
 .kotlin/
 *.orig.*
