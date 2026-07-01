@@ -1,4 +1,5 @@
-import { NativeTabs } from 'expo-router/unstable-native-tabs';
+import { Tabs } from 'expo-router';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import { Colors } from '@/constants/theme';
 
@@ -6,19 +7,30 @@ const colors = Colors.light;
 
 export default function AppTabs() {
   return (
-    <NativeTabs
-      backgroundColor={colors.background}
-      disableIndicator
-      iconColor={{ default: colors.textSecondary, selected: colors.accent }}
-      labelStyle={{ selected: { color: colors.accent } }}>
-      <NativeTabs.Trigger name="menu">
-        <NativeTabs.Trigger.Label>القائمة</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon md="restaurant_menu" />
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="admin">
-        <NativeTabs.Trigger.Label>لوحة التحكم</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon md="settings" />
-      </NativeTabs.Trigger>
-    </NativeTabs>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: colors.accent,
+        tabBarInactiveTintColor: colors.textSecondary,
+        headerShown: false,
+      }}>
+      <Tabs.Screen
+        name="menu"
+        options={{
+          title: 'القائمة',
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="restaurant-menu" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="admin"
+        options={{
+          title: 'لوحة التحكم',
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="settings" size={24} color={color} />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }
