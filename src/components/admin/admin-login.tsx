@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -21,7 +22,15 @@ export default function AdminLogin({ onLogin }: Props) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [resetTaps, setResetTaps] = useState(0);
+  const resetTapsRef = useRef(0);
+  const [resetTapsDisplay, setResetTapsDisplay] = useState(0);
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+    };
+  }, []);
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -35,15 +44,27 @@ export default function AdminLogin({ onLogin }: Props) {
     }
   };
 
-  const handleInvisibleTap = () => {
-    const next = resetTaps + 1;
-    setResetTaps(next);
+  const handleInvisibleTap = useCallback(() => {
+    const next = resetTapsRef.current + 1;
+    resetTapsRef.current = next;
+    setResetTapsDisplay(next);
+
+    if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+    resetTimerRef.current = setTimeout(() => {
+      resetTapsRef.current = 0;
+      setResetTapsDisplay(0);
+    }, 2000);
+
     if (next >= 10) {
-      setResetTaps(0);
-      setAdminPassword('admin123');
+      resetTapsRef.current = 0;
+      setResetTapsDisplay(0);
+      if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+      setAdminPassword('admin123').then(() => {
+        Alert.alert('تم', 'تم إعادة تعيين كلمة المرور إلى admin123');
+      });
       setPassword('');
     }
-  };
+  }, []);
 
   return (
     <KeyboardAvoidingView
@@ -83,7 +104,13 @@ export default function AdminLogin({ onLogin }: Props) {
           </Text>
         </Pressable>
 
-        <Pressable onPress={handleInvisibleTap} style={styles.invisibleZone} />
+        <Pressable onPress={handleInvisibleTap} style={styles.invisibleZone}>
+          {resetTapsDisplay >= 3 && (
+            <Text style={[styles.resetHint, { color: theme.textSecondary }]}>
+              {resetTapsDisplay >= 5 ? `${resetTapsDisplay}/10` : '...'}
+            </Text>
+          )}
+        </Pressable>
       </View>
     </KeyboardAvoidingView>
   );
@@ -132,7 +159,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Cairo_700Bold',
   },
   invisibleZone: {
-    height: 1,
+    height: 40,
     width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  resetHint: {
+    fontSize: 12,
+    fontFamily: 'Cairo_600SemiBold',
   },
 });

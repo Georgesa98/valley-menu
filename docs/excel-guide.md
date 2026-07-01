@@ -123,9 +123,25 @@ If you're comfortable with JSON, you can write the file directly:
 
 ---
 
-## Tips
+## Forgot Admin Password? (Hard Reset)
 
-- Keep your original Excel file so you can edit data later and re-export
-- Use the app's **📤 Export to file** feature to see the exact JSON structure the app generates
-- Make sure boolean values (`isAvailable`) are written **without quotes**: `true` not `"true"`
-- Make sure `categoryName` in the Items sheet **matches exactly** (including spaces/punctuation) the `name` in the Categories sheet
+If you can't remember the admin password, you can reset it to the default `admin123`
+from the login screen — no data loss (categories, items, and settings stay intact).
+
+**On the admin login screen:**
+
+1. Tap the **empty area below the دخول button**, inside the card, **10 times quickly**.
+   A small `...` will appear after 3 taps, then show `5/10`, `6/10`, etc. as you tap.
+2. On the 10th tap, a confirmation message says **"تم إعادة تعيين كلمة المرور إلى admin123"**.
+3. Log in with `admin123` and tap **دخول**.
+4. Once inside, use **تغيير كلمة المرور** to set a new password.
+
+> **Notes**
+> - The tap counter resets after 2 seconds of inactivity, so tap quickly.
+> - The reset only changes the password hash; all your menu data is preserved.
+> - If you don't see `...` after a few taps, you're tapping outside the card — aim
+>   just below the button but still inside the white card area.
+
+---
+
+## Tips

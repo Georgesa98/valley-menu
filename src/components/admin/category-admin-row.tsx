@@ -25,7 +25,7 @@ export default function CategoryAdminRow({
   onAddItem,
 }: Props) {
   const theme = useTheme();
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   const handleDeleteCategory = () => {
     Alert.alert('حذف القسم', `هل أنت متأكد من حذف "${category.name}"؟`, [

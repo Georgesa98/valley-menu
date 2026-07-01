@@ -11,7 +11,7 @@ export default function AppTabs() {
       disableIndicator
       iconColor={{ default: colors.textSecondary, selected: colors.accent }}
       labelStyle={{ selected: { color: colors.accent } }}>
-      <NativeTabs.Trigger name="index">
+      <NativeTabs.Trigger name="menu">
         <NativeTabs.Trigger.Label>القائمة</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon md="restaurant_menu" />
       </NativeTabs.Trigger>
