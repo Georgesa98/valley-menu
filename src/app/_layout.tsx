@@ -1,16 +1,13 @@
 import { useEffect } from 'react';
-import { I18nManager } from 'react-native';
 import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
 import { useColorScheme } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 
 import AppTabs from '@/components/app-tabs';
 
-// Only force RTL if it isn't already active — prevents a native activity restart loop
-if (!I18nManager.isRTL) {
-  I18nManager.allowRTL(true);
-  I18nManager.forceRTL(true);
-}
+// RTL is set at build time via app.json `extra.forcesRTL` — no need to call
+// I18nManager.forceRTL() at runtime, which would cause a native activity restart
+// and (if not gated) an infinite restart loop.
 
 SplashScreen.preventAutoHideAsync();
 
