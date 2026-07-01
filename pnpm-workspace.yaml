@@ -1,6 +1,8 @@
 allowBuilds:
   dtrace-provider: true
   esbuild: true
+overrides:
+  expo-constants: ~56.0.19
 minimumReleaseAgeExclude:
   - '@types/node@26.1.0'
   - '@expo/cli@56.1.17'

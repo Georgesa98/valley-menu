@@ -48,13 +48,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "build:preview": "pnpm exec eas build --platform android --profile preview",
-    "build:production": "pnpm exec eas build --platform android --profile production"
-  },
-  "pnpm": {
-    "overrides": {
-      "expo-constants": "~56.0.19"
-    }
+    "build:preview": "pnpm dlx eas-cli build --platform android --profile preview",
+    "build:production": "pnpm dlx eas-cli build --platform android --profile production"
   },
   "private": true
 }
