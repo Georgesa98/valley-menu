@@ -35,11 +35,16 @@ export default function AdminLogin({ onLogin }: Props) {
   const handleSubmit = async () => {
     setLoading(true);
     setError(false);
-    const ok = await verifyPassword(password);
-    setLoading(false);
-    if (ok) {
-      onLogin();
-    } else {
+    try {
+      const ok = await verifyPassword(password);
+      setLoading(false);
+      if (ok) {
+        onLogin();
+      } else {
+        setError(true);
+      }
+    } catch {
+      setLoading(false);
       setError(true);
     }
   };
@@ -61,6 +66,8 @@ export default function AdminLogin({ onLogin }: Props) {
       if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
       setAdminPassword('admin123').then(() => {
         Alert.alert('تم', 'تم إعادة تعيين كلمة المرور إلى admin123');
+      }).catch(() => {
+        Alert.alert('خطأ', 'تعذرت إعادة تعيين كلمة المرور');
       });
       setPassword('');
     }

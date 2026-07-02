@@ -227,8 +227,15 @@ export async function pickAndImport(): Promise<ImportResult> {
       return { success: false, message: 'تم الإلغاء', categoriesAdded: 0, itemsAdded: 0, itemsSkipped: 0 };
     }
 
-    const response = await fetch(result.assets[0].uri);
-    const content = await response.text();
+    const uri = result.assets[0].uri;
+    let content: string;
+    if (uri.startsWith('file://')) {
+      const file = new File(uri.replace('file://', ''));
+      content = await file.text();
+    } else {
+      const response = await fetch(uri);
+      content = await response.text();
+    }
 
     return await importMenu(content);
   } catch (error) {

@@ -133,9 +133,13 @@ export default function AdminScreen() {
       Alert.alert('خطأ', 'كلمة المرور يجب أن تكون ٤ أحرف على الأقل');
       return;
     }
-    await setAdminPassword(newPassword);
-    setNewPassword('');
-    setChangePassVisible(false);
+    try {
+      await setAdminPassword(newPassword);
+      setNewPassword('');
+      setChangePassVisible(false);
+    } catch {
+      Alert.alert('خطأ', 'تعذر تحديث كلمة المرور');
+    }
   };
 
   if (!authenticated) {
