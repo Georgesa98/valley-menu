@@ -2,53 +2,11 @@ import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Animated, {
-  Easing,
-  useAnimatedStyle,
-  useSharedValue,
-  withDelay,
-  withTiming,
-} from 'react-native-reanimated';
 import { useTheme } from '@/hooks/use-theme';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import type { Category, MenuItem } from '@/lib/types';
 import { getCategories, getMenuItems, getShowFinancialPrice } from '@/lib/db/client';
 import MenuItemCard from '@/components/menu/menu-item-card';
-
-function AnimatedItem({
-  item,
-  showFinancial,
-  index,
-}: {
-  item: MenuItem;
-  showFinancial: boolean;
-  index: number;
-}) {
-  const opacity = useSharedValue(0);
-  const translateY = useSharedValue(12);
-
-  useEffect(() => {
-    opacity.value = withDelay(
-      index * 40,
-      withTiming(1, { duration: 280, easing: Easing.out(Easing.cubic) }),
-    );
-    translateY.value = withDelay(
-      index * 40,
-      withTiming(0, { duration: 280, easing: Easing.out(Easing.cubic) }),
-    );
-  }, []);
-
-  const animatedStyle = useAnimatedStyle(() => ({
-    opacity: opacity.value,
-    transform: [{ translateY: translateY.value }],
-  }));
-
-  return (
-    <Animated.View style={animatedStyle}>
-      <MenuItemCard item={item} showFinancialPrice={showFinancial} />
-    </Animated.View>
-  );
-}
 
 export default function CategoryScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -94,13 +52,12 @@ export default function CategoryScreen() {
           >
             <Text style={[styles.backText, { color: theme.text }]}>← رجوع</Text>
           </Pressable>
-          <Animated.Text
-            sharedTransitionTag={`cat-name-${category.id}`}
+          <Text
             style={[styles.title, { color: theme.text }]}
             numberOfLines={2}
           >
             {category.name}
-          </Animated.Text>
+          </Text>
         </View>
 
         <View style={styles.list}>
@@ -109,12 +66,11 @@ export default function CategoryScreen() {
               لا توجد أصناف في هذا القسم
             </Text>
           ) : (
-            items.map((item, idx) => (
-              <AnimatedItem
+            items.map((item) => (
+              <MenuItemCard
                 key={item.id}
                 item={item}
-                showFinancial={showFinancial}
-                index={idx}
+                showFinancialPrice={showFinancial}
               />
             ))
           )}
