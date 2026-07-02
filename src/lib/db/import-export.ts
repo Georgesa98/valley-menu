@@ -1,4 +1,3 @@
-import * as DocumentPicker from 'expo-document-picker';
 import { File, Paths } from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import { Alert } from 'react-native';
@@ -218,25 +217,12 @@ export async function exportMenu(): Promise<string> {
 
 export async function pickAndImport(): Promise<ImportResult> {
   try {
-    const result = await DocumentPicker.getDocumentAsync({
-      type: 'application/json',
-      copyToCacheDirectory: true,
-    });
-
-    if (result.canceled) {
+    const picked = await File.pickFileAsync(undefined, 'application/json');
+    const file = Array.isArray(picked) ? picked[0] : picked;
+    if (!file) {
       return { success: false, message: 'تم الإلغاء', categoriesAdded: 0, itemsAdded: 0, itemsSkipped: 0 };
     }
-
-    const uri = result.assets[0].uri;
-    let content: string;
-    if (uri.startsWith('file://')) {
-      const file = new File(uri.replace('file://', ''));
-      content = await file.text();
-    } else {
-      const response = await fetch(uri);
-      content = await response.text();
-    }
-
+    const content = await file.text();
     return await importMenu(content);
   } catch (error) {
     const msg = error instanceof Error ? error.message : 'حدث خطأ غير متوقع';
@@ -246,9 +232,9 @@ export async function pickAndImport(): Promise<ImportResult> {
 
 export async function exportAndShare(): Promise<void> {
   const json = await exportMenu();
-  const exportFile = new File(Paths.document, 'valley-menu-export.json');
-  exportFile.create({ intermediates: true, overwrite: true });
-  exportFile.write(json, { encoding: 'utf8' });
+  const exportFile = new File(Paths.cache, 'valley-menu-export.json');
+  exportFile.create({ overwrite: true });
+  exportFile.write(json);
 
   const canShare = await Sharing.isAvailableAsync();
   if (canShare) {
