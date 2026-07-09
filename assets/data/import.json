@@ -13,44 +13,44 @@
       "order": 3
     },
     {
-      "name": "شرقي",
+      "name": "كريبات",
       "order": 4
     },
     {
-      "name": "مشروبات كحولية",
+      "name": "شرقي",
       "order": 5
     },
     {
-      "name": "بيتزا",
+      "name": "مشروبات كحولية",
       "order": 6
     },
     {
-      "name": "باريستا",
+      "name": "بيتزا",
       "order": 7
     },
     {
-      "name": "مقبلات باردة",
+      "name": "باريستا",
       "order": 8
     },
     {
-      "name": "مقبلات ساخنة",
+      "name": "مقبلات باردة",
       "order": 9
     },
     {
-      "name": "سلطات",
+      "name": "مقبلات ساخنة",
       "order": 10
     },
     {
-      "name": "باستا",
+      "name": "سلطات",
       "order": 11
     },
     {
-      "name": "سندويش",
+      "name": "باستا",
       "order": 12
     },
     {
       "name": "اراكيل",
-      "order": 13
+      "order": 14
     }
   ],
   "items": [
@@ -286,72 +286,12 @@
     },
     {
       "categoryName": "غربي",
-      "name": "كريب شوكولا",
-      "nameEn": "Chocolate Crepe",
-      "description": "",
-      "consumerPrice": 385,
-      "financialPrice": 385,
-      "order": 1,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "كريب موز",
-      "nameEn": "Banana Crepe",
-      "description": "",
-      "consumerPrice": 490,
-      "financialPrice": 490,
-      "order": 2,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "كريب فواكه",
-      "nameEn": "Fruit Crepe",
-      "description": "",
-      "consumerPrice": 490,
-      "financialPrice": 490,
-      "order": 3,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "كريب مكسرات",
-      "nameEn": "Nuts Crepe",
-      "description": "",
-      "consumerPrice": 550,
-      "financialPrice": 550,
-      "order": 4,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "كريب بوظة",
-      "nameEn": "Ice Cream Crepe",
-      "description": "",
-      "consumerPrice": 550,
-      "financialPrice": 550,
-      "order": 5,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
       "name": "سوبريم",
       "nameEn": "Supreme",
       "description": "",
       "consumerPrice": 750,
       "financialPrice": 750,
-      "order": 6,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "تشاينيز",
-      "nameEn": "Chinese",
-      "description": "",
-      "consumerPrice": 750,
-      "financialPrice": 750,
-      "order": 7,
+      "order": 1,
       "isAvailable": true
     },
     {
@@ -361,17 +301,17 @@
       "description": "",
       "consumerPrice": 800,
       "financialPrice": 800,
-      "order": 8,
+      "order": 2,
       "isAvailable": true
     },
     {
       "categoryName": "غربي",
-      "name": "ستروغانوف لحمة",
+      "name": "بيف سترغانوف",
       "nameEn": "Beef Stroganoff",
       "description": "",
       "consumerPrice": 1200,
       "financialPrice": 1200,
-      "order": 9,
+      "order": 3,
       "isAvailable": true
     },
     {
@@ -381,7 +321,7 @@
       "description": "",
       "consumerPrice": 165,
       "financialPrice": 165,
-      "order": 10,
+      "order": 4,
       "isAvailable": true
     },
     {
@@ -391,7 +331,7 @@
       "description": "",
       "consumerPrice": 750,
       "financialPrice": 750,
-      "order": 11,
+      "order": 5,
       "isAvailable": true
     },
     {
@@ -401,7 +341,7 @@
       "description": "",
       "consumerPrice": 750,
       "financialPrice": 750,
-      "order": 12,
+      "order": 6,
       "isAvailable": true
     },
     {
@@ -411,7 +351,7 @@
       "description": "",
       "consumerPrice": 800,
       "financialPrice": 800,
-      "order": 13,
+      "order": 7,
       "isAvailable": true
     },
     {
@@ -421,17 +361,7 @@
       "description": "",
       "consumerPrice": 850,
       "financialPrice": 850,
-      "order": 14,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "تشكن الاكينغ",
-      "nameEn": "Chicken a la King",
-      "description": "",
-      "consumerPrice": 800,
-      "financialPrice": 800,
-      "order": 15,
+      "order": 8,
       "isAvailable": true
     },
     {
@@ -441,7 +371,7 @@
       "description": "",
       "consumerPrice": 800,
       "financialPrice": 800,
-      "order": 16,
+      "order": 9,
       "isAvailable": true
     },
     {
@@ -451,17 +381,17 @@
       "description": "",
       "consumerPrice": 800,
       "financialPrice": 800,
-      "order": 17,
+      "order": 10,
       "isAvailable": true
     },
     {
       "categoryName": "غربي",
-      "name": "فاهيتا لحمة",
-      "nameEn": "Beef Fahita",
+      "name": "فيلاديلفيا",
+      "nameEn": "Philadelphia",
       "description": "",
       "consumerPrice": 1200,
       "financialPrice": 1200,
-      "order": 18,
+      "order": 11,
       "isAvailable": true
     },
     {
@@ -471,7 +401,7 @@
       "description": "",
       "consumerPrice": 750,
       "financialPrice": 750,
-      "order": 19,
+      "order": 12,
       "isAvailable": true
     },
     {
@@ -481,7 +411,7 @@
       "description": "",
       "consumerPrice": 750,
       "financialPrice": 750,
-      "order": 20,
+      "order": 13,
       "isAvailable": true
     },
     {
@@ -491,27 +421,7 @@
       "description": "",
       "consumerPrice": 850,
       "financialPrice": 850,
-      "order": 21,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "بيكاتا دجاج",
-      "nameEn": "Chicken Piccata",
-      "description": "",
-      "consumerPrice": 750,
-      "financialPrice": 750,
-      "order": 22,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "بيكاتا لحمة",
-      "nameEn": "Beef Piccata",
-      "description": "",
-      "consumerPrice": 1100,
-      "financialPrice": 1100,
-      "order": 23,
+      "order": 14,
       "isAvailable": true
     },
     {
@@ -521,27 +431,7 @@
       "description": "",
       "consumerPrice": 2000,
       "financialPrice": 2000,
-      "order": 24,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "دجاج بالكاري",
-      "nameEn": "Chicken Curry",
-      "description": "",
-      "consumerPrice": 880,
-      "financialPrice": 880,
-      "order": 25,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "تشيكن رول بالاعشاب",
-      "nameEn": "Herbal Chicken Rolls",
-      "description": "",
-      "consumerPrice": 880,
-      "financialPrice": 880,
-      "order": 26,
+      "order": 15,
       "isAvailable": true
     },
     {
@@ -551,7 +441,7 @@
       "description": "",
       "consumerPrice": 700,
       "financialPrice": 700,
-      "order": 27,
+      "order": 16,
       "isAvailable": true
     },
     {
@@ -561,7 +451,7 @@
       "description": "",
       "consumerPrice": 800,
       "financialPrice": 800,
-      "order": 28,
+      "order": 17,
       "isAvailable": true
     },
     {
@@ -571,7 +461,7 @@
       "description": "",
       "consumerPrice": 750,
       "financialPrice": 750,
-      "order": 29,
+      "order": 18,
       "isAvailable": true
     },
     {
@@ -581,7 +471,7 @@
       "description": "",
       "consumerPrice": 750,
       "financialPrice": 750,
-      "order": 30,
+      "order": 19,
       "isAvailable": true
     },
     {
@@ -591,7 +481,7 @@
       "description": "",
       "consumerPrice": 800,
       "financialPrice": 800,
-      "order": 31,
+      "order": 20,
       "isAvailable": true
     },
     {
@@ -601,7 +491,7 @@
       "description": "",
       "consumerPrice": 1200,
       "financialPrice": 1200,
-      "order": 32,
+      "order": 21,
       "isAvailable": true
     },
     {
@@ -611,27 +501,7 @@
       "description": "",
       "consumerPrice": 850,
       "financialPrice": 850,
-      "order": 33,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "تشيكن بانيه",
-      "nameEn": "Paneed Chicken",
-      "description": "",
-      "consumerPrice": 820,
-      "financialPrice": 820,
-      "order": 34,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "غربي",
-      "name": "سكالوب غريتان",
-      "nameEn": "Escalope Gratin",
-      "description": "",
-      "consumerPrice": 880,
-      "financialPrice": 880,
-      "order": 35,
+      "order": 22,
       "isAvailable": true
     },
     {
@@ -641,7 +511,7 @@
       "description": "",
       "consumerPrice": 1200,
       "financialPrice": 1200,
-      "order": 36,
+      "order": 23,
       "isAvailable": true
     },
     {
@@ -651,7 +521,7 @@
       "description": "",
       "consumerPrice": 1200,
       "financialPrice": 1200,
-      "order": 37,
+      "order": 24,
       "isAvailable": true
     },
     {
@@ -661,7 +531,87 @@
       "description": "",
       "consumerPrice": 1200,
       "financialPrice": 1200,
-      "order": 38,
+      "order": 25,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "غربي",
+      "name": "شاورما",
+      "nameEn": "Shawarma",
+      "description": "",
+      "consumerPrice": 700,
+      "financialPrice": 700,
+      "order": 26,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "غربي",
+      "name": "هبرغر جاج",
+      "nameEn": "Chicken Burger",
+      "description": "",
+      "consumerPrice": 550,
+      "financialPrice": 550,
+      "order": 27,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "غربي",
+      "name": "همبرغر لحمة",
+      "nameEn": "Beef Burger",
+      "description": "",
+      "consumerPrice": 660,
+      "financialPrice": 660,
+      "order": 28,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "كريبات",
+      "name": "كريب شوكولا",
+      "nameEn": "Chocolate Crepe",
+      "description": "",
+      "consumerPrice": 385,
+      "financialPrice": 385,
+      "order": 1,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "كريبات",
+      "name": "كريب موز",
+      "nameEn": "Banana Crepe",
+      "description": "",
+      "consumerPrice": 490,
+      "financialPrice": 490,
+      "order": 2,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "كريبات",
+      "name": "كريب فواكه",
+      "nameEn": "Fruit Crepe",
+      "description": "",
+      "consumerPrice": 490,
+      "financialPrice": 490,
+      "order": 3,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "كريبات",
+      "name": "كريب مكسرات",
+      "nameEn": "Nuts Crepe",
+      "description": "",
+      "consumerPrice": 550,
+      "financialPrice": 550,
+      "order": 4,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "كريبات",
+      "name": "كريب بوظة",
+      "nameEn": "Ice Cream Crepe",
+      "description": "",
+      "consumerPrice": 550,
+      "financialPrice": 550,
+      "order": 5,
       "isAvailable": true
     },
     {
@@ -962,6 +912,26 @@
       "consumerPrice": 440,
       "financialPrice": 440,
       "order": 30,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "شرقي",
+      "name": "كيلو جوانح",
+      "nameEn": "Wings 1Kg",
+      "description": "",
+      "consumerPrice": 1200,
+      "financialPrice": 1200,
+      "order": 31,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "شرقي",
+      "name": "نصف كيلو جوانح",
+      "nameEn": "Wings 1/2Kg",
+      "description": "",
+      "consumerPrice": 600,
+      "financialPrice": 600,
+      "order": 32,
       "isAvailable": true
     },
     {
@@ -1506,32 +1476,22 @@
     },
     {
       "categoryName": "مقبلات باردة",
-      "name": "موالح اكسترا",
-      "nameEn": "Nuts Extra",
+      "name": "سوركة مع زبدة",
+      "nameEn": "Soorka With Butter",
       "description": "",
-      "consumerPrice": 490,
-      "financialPrice": 490,
+      "consumerPrice": 440,
+      "financialPrice": 440,
       "order": 1,
       "isAvailable": true
     },
     {
       "categoryName": "مقبلات باردة",
-      "name": "موالح عادية",
-      "nameEn": "Nuts",
+      "name": "كشكة مع جوز",
+      "nameEn": "Kishka With Walnuts",
       "description": "",
-      "consumerPrice": 165,
-      "financialPrice": 165,
+      "consumerPrice": 385,
+      "financialPrice": 385,
       "order": 2,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات باردة",
-      "name": "جزر و خيار",
-      "nameEn": "Cucumber + Carrots",
-      "description": "",
-      "consumerPrice": 150,
-      "financialPrice": 150,
-      "order": 3,
       "isAvailable": true
     },
     {
@@ -1541,7 +1501,7 @@
       "description": "",
       "consumerPrice": 270,
       "financialPrice": 270,
-      "order": 4,
+      "order": 3,
       "isAvailable": true
     },
     {
@@ -1551,7 +1511,7 @@
       "description": "",
       "consumerPrice": 295,
       "financialPrice": 295,
-      "order": 5,
+      "order": 4,
       "isAvailable": true
     },
     {
@@ -1561,7 +1521,7 @@
       "description": "",
       "consumerPrice": 600,
       "financialPrice": 600,
-      "order": 6,
+      "order": 5,
       "isAvailable": true
     },
     {
@@ -1571,7 +1531,7 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 7,
+      "order": 6,
       "isAvailable": true
     },
     {
@@ -1581,7 +1541,7 @@
       "description": "",
       "consumerPrice": 295,
       "financialPrice": 295,
-      "order": 8,
+      "order": 7,
       "isAvailable": true
     },
     {
@@ -1591,7 +1551,7 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 9,
+      "order": 8,
       "isAvailable": true
     },
     {
@@ -1601,7 +1561,7 @@
       "description": "",
       "consumerPrice": 385,
       "financialPrice": 385,
-      "order": 10,
+      "order": 9,
       "isAvailable": true
     },
     {
@@ -1611,7 +1571,7 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 11,
+      "order": 10,
       "isAvailable": true
     },
     {
@@ -1621,7 +1581,7 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 12,
+      "order": 11,
       "isAvailable": true
     },
     {
@@ -1631,7 +1591,7 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 13,
+      "order": 12,
       "isAvailable": true
     },
     {
@@ -1641,7 +1601,7 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 14,
+      "order": 13,
       "isAvailable": true
     },
     {
@@ -1651,7 +1611,7 @@
       "description": "",
       "consumerPrice": 330,
       "financialPrice": 330,
-      "order": 15,
+      "order": 14,
       "isAvailable": true
     },
     {
@@ -1661,7 +1621,7 @@
       "description": "",
       "consumerPrice": 330,
       "financialPrice": 330,
-      "order": 16,
+      "order": 15,
       "isAvailable": true
     },
     {
@@ -1671,7 +1631,7 @@
       "description": "",
       "consumerPrice": 770,
       "financialPrice": 770,
-      "order": 17,
+      "order": 16,
       "isAvailable": true
     },
     {
@@ -1681,7 +1641,7 @@
       "description": "",
       "consumerPrice": 880,
       "financialPrice": 880,
-      "order": 18,
+      "order": 17,
       "isAvailable": true
     },
     {
@@ -1691,7 +1651,7 @@
       "description": "",
       "consumerPrice": 930,
       "financialPrice": 930,
-      "order": 19,
+      "order": 18,
       "isAvailable": true
     },
     {
@@ -1701,7 +1661,7 @@
       "description": "",
       "consumerPrice": 880,
       "financialPrice": 880,
-      "order": 20,
+      "order": 19,
       "isAvailable": true
     },
     {
@@ -1711,7 +1671,7 @@
       "description": "",
       "consumerPrice": 440,
       "financialPrice": 440,
-      "order": 21,
+      "order": 20,
       "isAvailable": true
     },
     {
@@ -1721,7 +1681,7 @@
       "description": "",
       "consumerPrice": 220,
       "financialPrice": 220,
-      "order": 22,
+      "order": 21,
       "isAvailable": true
     },
     {
@@ -1731,7 +1691,7 @@
       "description": "",
       "consumerPrice": 330,
       "financialPrice": 330,
-      "order": 23,
+      "order": 22,
       "isAvailable": true
     },
     {
@@ -1741,7 +1701,7 @@
       "description": "",
       "consumerPrice": 440,
       "financialPrice": 440,
-      "order": 24,
+      "order": 23,
       "isAvailable": true
     },
     {
@@ -1751,7 +1711,7 @@
       "description": "",
       "consumerPrice": 385,
       "financialPrice": 385,
-      "order": 25,
+      "order": 24,
       "isAvailable": true
     },
     {
@@ -1761,7 +1721,7 @@
       "description": "",
       "consumerPrice": 390,
       "financialPrice": 390,
-      "order": 26,
+      "order": 25,
       "isAvailable": true
     },
     {
@@ -1771,17 +1731,7 @@
       "description": "",
       "consumerPrice": 200,
       "financialPrice": 200,
-      "order": 27,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات باردة",
-      "name": "صحن زيت",
-      "nameEn": "Oil Plate",
-      "description": "",
-      "consumerPrice": 165,
-      "financialPrice": 165,
-      "order": 28,
+      "order": 26,
       "isAvailable": true
     },
     {
@@ -1791,7 +1741,7 @@
       "description": "",
       "consumerPrice": 550,
       "financialPrice": 550,
-      "order": 29,
+      "order": 27,
       "isAvailable": true
     },
     {
@@ -1801,7 +1751,7 @@
       "description": "",
       "consumerPrice": 110,
       "financialPrice": 110,
-      "order": 30,
+      "order": 28,
       "isAvailable": true
     },
     {
@@ -1811,7 +1761,7 @@
       "description": "",
       "consumerPrice": 990,
       "financialPrice": 990,
-      "order": 31,
+      "order": 29,
       "isAvailable": true
     },
     {
@@ -1821,7 +1771,7 @@
       "description": "",
       "consumerPrice": 110,
       "financialPrice": 110,
-      "order": 32,
+      "order": 30,
       "isAvailable": true
     },
     {
@@ -1831,7 +1781,7 @@
       "description": "",
       "consumerPrice": 1320,
       "financialPrice": 1320,
-      "order": 33,
+      "order": 31,
       "isAvailable": true
     },
     {
@@ -1841,7 +1791,7 @@
       "description": "",
       "consumerPrice": 2200,
       "financialPrice": 2200,
-      "order": 34,
+      "order": 32,
       "isAvailable": true
     },
     {
@@ -1851,27 +1801,7 @@
       "description": "",
       "consumerPrice": 880,
       "financialPrice": 880,
-      "order": 35,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات ساخنة",
-      "name": "كشكة مع جوز",
-      "nameEn": "Kishka With Walnuts",
-      "description": "",
-      "consumerPrice": 385,
-      "financialPrice": 385,
-      "order": 1,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات ساخنة",
-      "name": "سوركي مع زبدة",
-      "nameEn": "Soorka With Butter",
-      "description": "",
-      "consumerPrice": 440,
-      "financialPrice": 440,
-      "order": 2,
+      "order": 33,
       "isAvailable": true
     },
     {
@@ -1881,7 +1811,7 @@
       "description": "",
       "consumerPrice": 440,
       "financialPrice": 440,
-      "order": 3,
+      "order": 1,
       "isAvailable": true
     },
     {
@@ -1891,7 +1821,7 @@
       "description": "",
       "consumerPrice": 330,
       "financialPrice": 330,
-      "order": 4,
+      "order": 2,
       "isAvailable": true
     },
     {
@@ -1901,17 +1831,7 @@
       "description": "",
       "consumerPrice": 330,
       "financialPrice": 330,
-      "order": 5,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات ساخنة",
-      "name": "بطاطا حارة و جبنة",
-      "nameEn": "Spicy Potato With Cheese",
-      "description": "",
-      "consumerPrice": 380,
-      "financialPrice": 380,
-      "order": 6,
+      "order": 3,
       "isAvailable": true
     },
     {
@@ -1921,7 +1841,7 @@
       "description": "",
       "consumerPrice": 80,
       "financialPrice": 80,
-      "order": 7,
+      "order": 4,
       "isAvailable": true
     },
     {
@@ -1931,7 +1851,7 @@
       "description": "",
       "consumerPrice": 330,
       "financialPrice": 330,
-      "order": 8,
+      "order": 5,
       "isAvailable": true
     },
     {
@@ -1941,7 +1861,7 @@
       "description": "",
       "consumerPrice": 120,
       "financialPrice": 120,
-      "order": 9,
+      "order": 6,
       "isAvailable": true
     },
     {
@@ -1951,7 +1871,7 @@
       "description": "",
       "consumerPrice": 90,
       "financialPrice": 90,
-      "order": 10,
+      "order": 7,
       "isAvailable": true
     },
     {
@@ -1961,7 +1881,7 @@
       "description": "",
       "consumerPrice": 360,
       "financialPrice": 360,
-      "order": 11,
+      "order": 8,
       "isAvailable": true
     },
     {
@@ -1971,7 +1891,7 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 12,
+      "order": 9,
       "isAvailable": true
     },
     {
@@ -1981,7 +1901,7 @@
       "description": "",
       "consumerPrice": 360,
       "financialPrice": 360,
-      "order": 13,
+      "order": 10,
       "isAvailable": true
     },
     {
@@ -1991,7 +1911,7 @@
       "description": "",
       "consumerPrice": 300,
       "financialPrice": 300,
-      "order": 14,
+      "order": 11,
       "isAvailable": true
     },
     {
@@ -2001,7 +1921,7 @@
       "description": "",
       "consumerPrice": 385,
       "financialPrice": 385,
-      "order": 15,
+      "order": 12,
       "isAvailable": true
     },
     {
@@ -2011,7 +1931,7 @@
       "description": "",
       "consumerPrice": 820,
       "financialPrice": 820,
-      "order": 16,
+      "order": 13,
       "isAvailable": true
     },
     {
@@ -2021,7 +1941,7 @@
       "description": "",
       "consumerPrice": 350,
       "financialPrice": 350,
-      "order": 17,
+      "order": 14,
       "isAvailable": true
     },
     {
@@ -2031,7 +1951,7 @@
       "description": "",
       "consumerPrice": 880,
       "financialPrice": 880,
-      "order": 18,
+      "order": 15,
       "isAvailable": true
     },
     {
@@ -2041,7 +1961,7 @@
       "description": "",
       "consumerPrice": 330,
       "financialPrice": 330,
-      "order": 19,
+      "order": 16,
       "isAvailable": true
     },
     {
@@ -2051,7 +1971,7 @@
       "description": "",
       "consumerPrice": 130,
       "financialPrice": 130,
-      "order": 20,
+      "order": 17,
       "isAvailable": true
     },
     {
@@ -2061,27 +1981,7 @@
       "description": "",
       "consumerPrice": 390,
       "financialPrice": 390,
-      "order": 21,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات ساخنة",
-      "name": "كيلو جوانح",
-      "nameEn": "Wings 1Kg",
-      "description": "",
-      "consumerPrice": 1200,
-      "financialPrice": 1200,
-      "order": 22,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات ساخنة",
-      "name": "نصف كيلو جوانح",
-      "nameEn": "Wings 1/2Kg",
-      "description": "",
-      "consumerPrice": 600,
-      "financialPrice": 600,
-      "order": 23,
+      "order": 18,
       "isAvailable": true
     },
     {
@@ -2091,7 +1991,7 @@
       "description": "",
       "consumerPrice": 120,
       "financialPrice": 120,
-      "order": 24,
+      "order": 19,
       "isAvailable": true
     },
     {
@@ -2101,7 +2001,7 @@
       "description": "",
       "consumerPrice": 400,
       "financialPrice": 400,
-      "order": 25,
+      "order": 20,
       "isAvailable": true
     },
     {
@@ -2111,7 +2011,7 @@
       "description": "",
       "consumerPrice": 450,
       "financialPrice": 450,
-      "order": 26,
+      "order": 21,
       "isAvailable": true
     },
     {
@@ -2121,17 +2021,7 @@
       "description": "",
       "consumerPrice": 165,
       "financialPrice": 165,
-      "order": 27,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "مقبلات ساخنة",
-      "name": "سبرينغ رول لحمة",
-      "nameEn": "Beef Spring Rolls",
-      "description": "",
-      "consumerPrice": 330,
-      "financialPrice": 330,
-      "order": 28,
+      "order": 22,
       "isAvailable": true
     },
     {
@@ -2141,7 +2031,7 @@
       "description": "",
       "consumerPrice": 550,
       "financialPrice": 550,
-      "order": 29,
+      "order": 23,
       "isAvailable": true
     },
     {
@@ -2151,7 +2041,17 @@
       "description": "",
       "consumerPrice": 275,
       "financialPrice": 275,
-      "order": 30,
+      "order": 24,
+      "isAvailable": true
+    },
+    {
+      "categoryName": "مقبلات ساخنة",
+      "name": "بطاطا بوتيه",
+      "nameEn": "Potato Boats",
+      "description": "",
+      "consumerPrice": 385,
+      "financialPrice": 385,
+      "order": 25,
       "isAvailable": true
     },
     {
@@ -2296,22 +2196,12 @@
     },
     {
       "categoryName": "سلطات",
-      "name": "صحن زيتون",
-      "nameEn": "Olive Plate",
-      "description": "",
-      "consumerPrice": 220,
-      "financialPrice": 220,
-      "order": 15,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سلطات",
       "name": "سلطة بقلة",
       "nameEn": "Purslane Salad",
       "description": "",
       "consumerPrice": 385,
       "financialPrice": 385,
-      "order": 16,
+      "order": 15,
       "isAvailable": true
     },
     {
@@ -2321,7 +2211,7 @@
       "description": "",
       "consumerPrice": 600,
       "financialPrice": 600,
-      "order": 17,
+      "order": 16,
       "isAvailable": true
     },
     {
@@ -2331,27 +2221,7 @@
       "description": "",
       "consumerPrice": 660,
       "financialPrice": 660,
-      "order": 18,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سلطات",
-      "name": "سلطة ناتشوز",
-      "nameEn": "Nachos Salad",
-      "description": "",
-      "consumerPrice": 440,
-      "financialPrice": 440,
-      "order": 19,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سلطات",
-      "name": "صحن خس و ليمون",
-      "nameEn": "Lettuce & Lemon Salad",
-      "description": "",
-      "consumerPrice": 275,
-      "financialPrice": 275,
-      "order": 20,
+      "order": 17,
       "isAvailable": true
     },
     {
@@ -2361,17 +2231,7 @@
       "description": "",
       "consumerPrice": 520,
       "financialPrice": 520,
-      "order": 21,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سلطات",
-      "name": "صحن خضار",
-      "nameEn": "Veggies Plate",
-      "description": "",
-      "consumerPrice": 330,
-      "financialPrice": 330,
-      "order": 22,
+      "order": 18,
       "isAvailable": true
     },
     {
@@ -2381,7 +2241,7 @@
       "description": "",
       "consumerPrice": 550,
       "financialPrice": 550,
-      "order": 23,
+      "order": 19,
       "isAvailable": true
     },
     {
@@ -2391,17 +2251,7 @@
       "description": "",
       "consumerPrice": 720,
       "financialPrice": 720,
-      "order": 24,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سلطات",
-      "name": "جاط خضار",
-      "nameEn": "Veggies Bowl",
-      "description": "",
-      "consumerPrice": 550,
-      "financialPrice": 550,
-      "order": 25,
+      "order": 20,
       "isAvailable": true
     },
     {
@@ -2411,7 +2261,7 @@
       "description": "",
       "consumerPrice": 420,
       "financialPrice": 420,
-      "order": 26,
+      "order": 21,
       "isAvailable": true
     },
     {
@@ -2421,7 +2271,7 @@
       "description": "",
       "consumerPrice": 490,
       "financialPrice": 490,
-      "order": 27,
+      "order": 22,
       "isAvailable": true
     },
     {
@@ -2431,7 +2281,7 @@
       "description": "",
       "consumerPrice": 440,
       "financialPrice": 440,
-      "order": 28,
+      "order": 23,
       "isAvailable": true
     },
     {
@@ -2441,17 +2291,7 @@
       "description": "",
       "consumerPrice": 550,
       "financialPrice": 550,
-      "order": 29,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سلطات",
-      "name": "صحن خضار سوتيه",
-      "nameEn": "Saute Vegetables Plate",
-      "description": "",
-      "consumerPrice": 550,
-      "financialPrice": 550,
-      "order": 30,
+      "order": 24,
       "isAvailable": true
     },
     {
@@ -2461,7 +2301,7 @@
       "description": "",
       "consumerPrice": 770,
       "financialPrice": 770,
-      "order": 31,
+      "order": 25,
       "isAvailable": true
     },
     {
@@ -2471,7 +2311,7 @@
       "description": "",
       "consumerPrice": 470,
       "financialPrice": 470,
-      "order": 32,
+      "order": 26,
       "isAvailable": true
     },
     {
@@ -2481,7 +2321,7 @@
       "description": "",
       "consumerPrice": 385,
       "financialPrice": 385,
-      "order": 33,
+      "order": 27,
       "isAvailable": true
     },
     {
@@ -2542,76 +2382,6 @@
       "consumerPrice": 700,
       "financialPrice": 700,
       "order": 6,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سندويش",
-      "name": "شاورما دجاج",
-      "nameEn": "Chicken Shawarma",
-      "description": "",
-      "consumerPrice": 700,
-      "financialPrice": 700,
-      "order": 1,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سندويش",
-      "name": "شاورما فالي ستار",
-      "nameEn": "Valley Star Shawarma",
-      "description": "",
-      "consumerPrice": 770,
-      "financialPrice": 770,
-      "order": 2,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سندويش",
-      "name": "هوت دوغ بوب كورن",
-      "nameEn": "Popcorn Hotdog",
-      "description": "",
-      "consumerPrice": 770,
-      "financialPrice": 770,
-      "order": 3,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سندويش",
-      "name": "تشيكن بوب كورن",
-      "nameEn": "Chicken Popcorn",
-      "description": "",
-      "consumerPrice": 440,
-      "financialPrice": 440,
-      "order": 4,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سندويش",
-      "name": "همبرغر لحمة",
-      "nameEn": "Beef Burger",
-      "description": "",
-      "consumerPrice": 660,
-      "financialPrice": 660,
-      "order": 5,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سندويش",
-      "name": "شاورما",
-      "nameEn": "Shawarma",
-      "description": "",
-      "consumerPrice": 700,
-      "financialPrice": 700,
-      "order": 6,
-      "isAvailable": true
-    },
-    {
-      "categoryName": "سندويش",
-      "name": "هبرغر جاج",
-      "nameEn": "Chicken Burger",
-      "description": "",
-      "consumerPrice": 550,
-      "financialPrice": 550,
-      "order": 7,
       "isAvailable": true
     },
     {
